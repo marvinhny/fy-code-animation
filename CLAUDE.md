@@ -9,6 +9,7 @@
 | `~/MyProjects/animation` | marvinhny/fy-code-animation（upstream: Akillll-DuoHe） | 需求澄清、语义分镜、导演流程、任务卡、Remotion 落地与返修 |
 | `~/MyProjects/code-animation-prompts` | marvinhny/code-animation-prompts（origin: XiaoyeCodes） | 341 风格模板库；本技能的风格库根是其 `skills/code-animation-prompts/assets/library` |
 | `~/MyProjects/voice` | marvinhny/breeze-tts（upstream: breezeblue-ai） | 文本转语音（Breeze TTS 2）：口播、配音 |
+| `~/MyProjects/works` | 仅本地 git | 视频作品；每片一个目录。文章来源与数据核对方式见其 CLAUDE.md |
 
 ## 约定
 
