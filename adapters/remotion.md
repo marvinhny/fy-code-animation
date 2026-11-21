@@ -7,7 +7,7 @@
 ## 接入步骤
 
 1. 在目标工程读package.json及锁文件，再查实际node_modules。只选择已安装且接口匹配的实现；缺依赖列明，安装需有当前授权。
-2. 按下方实际目录路由读对应版本remotion-best-practices；不整套逐次加载。DSH包装与官方重复部分合并理解，包装层不能冒充新能力。
+2. 按下方实际目录路由读对应版本remotion-best-practices；不整套逐次加载。Agent 侧包装（Claude Code 技能等）与官方重复部分合并理解，包装层不能冒充新能力。
 3. registerRoot→Composition定义fps/尺寸/duration；场景Sequence传明确from和durationInFrames。局部frame与全局frame分清；重叠转场改变总长，勿直接求各段总和。
 4. 资源从staticFile相对public读取，图像/字体失败报错，delayRender句柄只完成一次。未知设备上先验证依赖，再做当前授权阶段的产物。
 5. 媒体用实际版本支持的Video/Audio API；不要从旧教程直接替换OffthreadVideo，或把新media接口硬套旧工程。

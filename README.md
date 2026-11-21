@@ -1,6 +1,6 @@
 # fy-code-animation
 
-把中文文案、画风提示词和声音做成**前后连贯的代码动画**（Remotion / Canvas / HTML）的 DeepSeek Harness 技能。
+把中文文案、画风提示词和声音做成**前后连贯的代码动画**（Remotion / Canvas / HTML）的 Claude Code 技能（fork 自 [Akillll-DuoHe/fy-code-animation](https://github.com/Akillll-DuoHe/fy-code-animation)，原为 DeepSeek Harness 技能）。
 
 > 《俯仰观照》免费分享，欢迎免费使用、免费分享；请不要包装成付费课程、付费 skills 或收费资料出售。详见 [LICENSE.md](./LICENSE.md)。
 
@@ -23,20 +23,26 @@
 | `tests/` | 逻辑、Canvas 契约、任务卡契约测试 |
 | `LICENSES/` | 第三方来源与许可 |
 
-## 安装
+## 安装（Claude Code）
 
-把整个 `fy-code-animation/` 目录复制进你的 DSH 技能目录即可，包内全是相对路径、不依赖本机绝对路径：
+把仓库软链进 Claude Code 的个人技能目录，改仓库即改技能：
 
 ```sh
-git clone https://github.com/Akillll-DuoHe/fy-code-animation.git
-cp -r fy-code-animation ~/.dsh/skills/    # 按你的技能目录位置调整
+git clone https://github.com/marvinhny/fy-code-animation.git ~/MyProjects/animation
+ln -sfn ~/MyProjects/animation ~/.claude/skills/fy-code-animation
 ```
 
-国内网络可直接用 Gitee 镜像：https://gitee.com/Akillll-DuoHe/fy-code-animation
+之后在 Claude Code 里说“用 fy-code-animation 做……”或输入 `/fy-code-animation` 即可调用。
+
+同步上游：
+
+```sh
+git fetch upstream && git merge upstream/main
+```
 
 ## 第一次使用
 
-1. **341 风格库不随包分发**，需要你自己的库路径（库根下应有 `风格提示词/`，可选 `示例/`）
+1. **341 风格库不随包分发**。本机已在 `adapters/style-library.config.json` 指向同级仓库 `../code-animation-prompts/skills/code-animation-prompts/assets/library`（库根下有 `风格提示词/`、`示例/`）
 2. 先跑一次自检：
 
    ```sh
@@ -47,7 +53,7 @@ cp -r fy-code-animation ~/.dsh/skills/    # 按你的技能目录位置调整
 
 ## 要求
 
-- Python 3.10+（脚本与契约测试）
+- Python 3.10+（脚本与契约测试；本机 pyenv 默认 3.9，请用 `python3.13`）
 - Node 20+（`tests/test_logic.mjs`、`tests/test_canvas_contract.mjs`）
 - Remotion / Canvas / HTML 任选其一落地，依赖按项目自带
 
